@@ -15,7 +15,7 @@ class Questions : AppCompatActivity() {
     private lateinit var txtAnswerFeedback: TextView
 
     private var currentQuestionIndex = 0
-    private var score = 0
+    private var score = 0 // Initialize score to 0
 
 
     private val questions = listOf(
@@ -24,6 +24,7 @@ class Questions : AppCompatActivity() {
         Question("Apartheid Ended in 1997 .", false),
         Question("Nelson Mandela became the first South African president after he got released from jail and after the apartheid ended.", true),
         Question("Only White and Black people were separated.", false)
+        // All 5 questions with answers of true or false in the quiz
     )
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -42,19 +43,19 @@ class Questions : AppCompatActivity() {
 
 
         btnTrue.setOnClickListener {
-            checkAnswer(true)
+            checkAnswer(true) // Pass the user's answer as true
         }
 
         btnFalse.setOnClickListener {
-            checkAnswer(false)
+            checkAnswer(false) // Pass the user's answer as false
         }
 
         btnNext.setOnClickListener {
-            moveToNextQuestion()
+            moveToNextQuestion() // Move to the next question
         }
 
 
-        btnNext.isEnabled = false
+        btnNext.isEnabled = false // Disable the "Next" button initially
     }
 
     private fun displayQuestion() {
@@ -63,24 +64,24 @@ class Questions : AppCompatActivity() {
             txtQuestion.text = question.text
 
 
-            txtAnswerFeedback.text = ""
-            btnTrue.isEnabled = true
-            btnFalse.isEnabled = true
-            btnNext.isEnabled = false
+            txtAnswerFeedback.text = "" // Clear the answer feedback text
+            btnTrue.isEnabled = true // Enable the "True" button
+            btnFalse.isEnabled = true // Enable the "False" button
+            btnNext.isEnabled = false // Disable the "Next" button
         } else {
 
             txtQuestion.text = "Quiz Finished!"
             txtAnswerFeedback.text = ""
-            btnTrue.visibility = Button.GONE
-            btnFalse.visibility = Button.GONE
+            btnTrue.visibility = Button.GONE // Hide the "True" button
+            btnFalse.visibility = Button.GONE // Hide the "False" button
             btnNext.text = "Score Screen"
             btnNext.isEnabled = true
             btnNext.setOnClickListener {
                 val intent = Intent(this, ScoreScreen::class.java)
                 intent.putExtra("final_score", score)
                 intent.putExtra("total_questions", questions.size)
-                startActivity(intent)
-                finish()}
+                startActivity(intent) //Move to the Score Screen page
+                finish()} // Finish the current page
         }
     }
 
@@ -89,9 +90,9 @@ class Questions : AppCompatActivity() {
         if (userAnswer == currentQuestion.answer) {
             txtAnswerFeedback.text = "Correct!"
             txtAnswerFeedback.setTextColor(getColor(R.color.black))
-            score++
+            score++ // Increase the score if the answer is correct
         } else {
-            txtAnswerFeedback.text = "Incorrect. The correct answer was ${currentQuestion.answer}."
+            txtAnswerFeedback.text = "Incorrect. The correct answer was ${currentQuestion.answer}." // Display the correct answer
             txtAnswerFeedback.setTextColor(getColor(R.color.black))
         }
 
@@ -102,10 +103,10 @@ class Questions : AppCompatActivity() {
     }
 
     private fun moveToNextQuestion() {
-        currentQuestionIndex++
+        currentQuestionIndex++ // Move to the next question
         displayQuestion()
     }
 
 
-    data class Question(val text: String, val answer: Boolean)
+    data class Question(val text: String, val answer: Boolean) // Data class to represent a question with text and answer
 }
