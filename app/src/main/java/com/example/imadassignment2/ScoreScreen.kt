@@ -1,5 +1,6 @@
 package com.example.imadassignment2
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
@@ -43,6 +44,10 @@ class ScoreScreen : AppCompatActivity() {
         //Gemini took my original if statement and changed it to when statement
         //Personal response to the score from the user
 
+        Review.setOnClickListener {
+            val intent = Intent(this, Review::class.java)
+            startActivity(intent)
+        }
         Exit.setOnClickListener {
             finishAffinity()// Terminates the app without any harmful activity towards the program
         }
