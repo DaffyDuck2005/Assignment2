@@ -21,7 +21,7 @@ class Questions : AppCompatActivity() {
     private val questions = listOf(
         Question("The First All Race Election in South Africa Was In 1994.", true),
         Question("Is The Cradle Of Humankind located in Johannesburg.", true),
-        Question("Apartheid Ended in 1997 .", false),
+        Question("Apartheid Ended in 1997.", false),
         Question("Nelson Mandela became the first South African president after he got released from jail and after the apartheid ended.", true),
         Question("Only White and Black people were separated.", false)
         // All 5 questions with answers of true or false in the quiz

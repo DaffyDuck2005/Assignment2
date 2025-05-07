@@ -34,22 +34,26 @@ class ScoreScreen : AppCompatActivity() {
         Score.text = "Your Final Score: $finalScore / $totalQuestions"
         //Score from the previous page with the true or flase questions
 
+        Review.setOnClickListener {
+            val reviewIntent = Intent(this, Review::class.java)
+            startActivity(reviewIntent)
+        }
+
         when (finalScore) {
             5 -> Response.text = "Impressive! You did great."
             4 -> Response.text = "You did very well, almost there."
             3 -> Response.text = "You did good, but you can do better."
             2 -> Response.text = "You did ok, but need to work on your History knowledge."
             1 -> Response.text = "You need to work on your History knowledge."
-            else -> Response.text = "Keep studying History!" }
+            else -> Response.text = "Keep studying History!"
+        }
         //Gemini took my original if statement and changed it to when statement
         //Personal response to the score from the user
 
-        Review.setOnClickListener {
-            val intent = Intent(this, Review::class.java)
-            startActivity(intent)
-        }
+
         Exit.setOnClickListener {
-            finishAffinity()// Terminates the app without any harmful activity towards the program
+            finishAffinity() //Exit the app
         }
+
     }
 }
