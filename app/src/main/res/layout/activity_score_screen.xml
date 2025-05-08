@@ -74,36 +74,36 @@
             app:layout_constraintTop_toBottomOf="@+id/txtScore" />
 
         <Button
-            android:id="@+id/btnReview"
-            android:layout_width="314dp"
-            android:layout_height="73dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="20dp"
-            android:backgroundTint="#2B2D30"
-            android:text="Review"
-            android:textAlignment="center"
-            android:textColor="#E1D2AE"
-            android:textSize="40sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtResponse" />
-
-        <Button
             android:id="@+id/btnExit"
             android:layout_width="294dp"
             android:layout_height="79dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="16dp"
             android:backgroundTint="#2B2D30"
             android:text="Exit"
             android:textAlignment="center"
             android:textColor="#E0BF94"
             android:textSize="40sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.487"
+            app:layout_constraintHorizontal_bias="0.495"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btnReview" />
+            app:layout_constraintTop_toBottomOf="@+id/txtResponse" />
+
+        <Button
+            android:id="@+id/btnLookAgain"
+            android:layout_width="294dp"
+            android:layout_height="79dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="28dp"
+            android:layout_marginEnd="20dp"
+            android:backgroundTint="#2B2D30"
+            android:text="Review"
+            android:textAlignment="center"
+            android:textColor="#D9C49A"
+            android:textSize="40sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnExit" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

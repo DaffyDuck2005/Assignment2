@@ -22,9 +22,8 @@ class ScoreScreen : AppCompatActivity() {
         val ScoreScreen = findViewById<TextView>(R.id.txtScoreScreen)
         val Score = findViewById<TextView>(R.id.txtScore)
         val Response = findViewById<TextView>(R.id.txtResponse)
-        val Review = findViewById<Button>(R.id.btnReview)
         val Exit = findViewById<Button>(R.id.btnExit)
-        val intent = intent
+        val LookAgain = findViewById<Button>(R.id.btnLookAgain)
 
         ScoreScreen.text = "Score Screen"
 
@@ -34,9 +33,9 @@ class ScoreScreen : AppCompatActivity() {
         Score.text = "Your Final Score: $finalScore / $totalQuestions"
         //Score from the previous page with the true or flase questions
 
-        Review.setOnClickListener {
-            val reviewIntent = Intent(this, Review::class.java)
-            startActivity(reviewIntent)
+        LookAgain.setOnClickListener {
+            val intent = Intent(this, Review::class.java)
+            startActivity(intent) //Review page
         }
 
         when (finalScore) {
@@ -54,6 +53,5 @@ class ScoreScreen : AppCompatActivity() {
         Exit.setOnClickListener {
             finishAffinity() //Exit the app
         }
-
     }
 }
