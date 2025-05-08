@@ -27,20 +27,20 @@
             app:srcCompat="@drawable/friygyetg_tunug" />
 
         <TextView
-            android:id="@+id/btnReviewQuestions"
+            android:id="@+id/txtReviewQuestions"
             android:layout_width="381dp"
             android:layout_height="451dp"
             android:layout_marginTop="36dp"
             android:textAlignment="center"
             android:textColor="#141313"
-            android:textSize="24sp"
+            android:textSize="34sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.466"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/btnReviewAnswer"
+            android:id="@+id/txtReviewAnswer"
             android:layout_width="374dp"
             android:layout_height="77dp"
             android:layout_marginTop="20dp"
@@ -50,7 +50,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.432"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btnReviewQuestions" />
+            app:layout_constraintTop_toBottomOf="@+id/txtReviewQuestions" />
 
         <Button
             android:id="@+id/btnQuestion"
@@ -67,6 +67,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btnReviewAnswer" />
+            app:layout_constraintTop_toBottomOf="@+id/txtReviewAnswer" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

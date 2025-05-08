@@ -35,7 +35,7 @@ class MainActivity : AppCompatActivity() {
             currentIndex++
             if (currentIndex < sentences.size) {
                 Sentence.text = sentences[currentIndex]
-                handler.postDelayed(runnable, 1000)// Delay for 1 second before displaying the next sentence
+                handler.postDelayed(runnable, 8000)// Delay for 1 second before displaying the next sentence
             } else {
                 handler.removeCallbacks(runnable)
                 Start.isEnabled = true
@@ -46,7 +46,7 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }
-        handler.postDelayed(runnable, 1000)// Delay for 1 second before starting the loop
+        handler.postDelayed(runnable, 8000)// Delay for 1 second before starting the loop
         Start.isEnabled = false
     }
     override fun onDestroy() {
