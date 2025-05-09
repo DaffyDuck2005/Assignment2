@@ -27,15 +27,23 @@ class ScoreScreen : AppCompatActivity() {
 
         ScoreScreen.text = "Score Screen"
 
-        val finalScore = intent.getIntExtra("final_score", 0)
-        val totalQuestions = intent.getIntExtra("total_questions", 0)
+        val finalScore = intent.getIntExtra("final_score", 0) // Get final score from the intent
+        val totalQuestions = intent.getIntExtra("total_questions", 0) // Get total questions from the intent
 
-        Score.text = "Your Final Score: $finalScore / $totalQuestions"
-        //Score from the previous page with the true or flase questions
+        val percentage = if (totalQuestions > 0) {
+            // Calculate the percentage and round to one decimal place
+            String.format("%.1f", (finalScore.toDouble() * 100.0 / totalQuestions)) // Calculate the percentage
+            // Gemini took my percentage calculation method and changed it into a suitable working method
+        } else {
+            "N/A" // Cannot divide by zero
+        }
+
+        Score.text = "Your Final Score: $finalScore / $totalQuestions ($percentage%)" // Displays the final score and percentage
+
 
         LookAgain.setOnClickListener {
             val intent = Intent(this, Review::class.java)
-            startActivity(intent) //Review page
+            startActivity(intent) //move to the review page
         }
 
         when (finalScore) {

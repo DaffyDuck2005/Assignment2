@@ -24,10 +24,9 @@ class Review : AppCompatActivity() {
         QuestionAnswer("Apartheid Ended in 1997.", false),
         QuestionAnswer("Nelson Mandela became the first South African president after he got released from jail and after the apartheid ended.", true),
         QuestionAnswer("Only White and Black people were separated.", false)
-    )
+    ) //Questions from the Array
 
-
-    private var currentReviewIndex = 0
+    private var currentReviewIndex = 0 // Initialize the index to 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,34 +36,33 @@ class Review : AppCompatActivity() {
         reviewAnswerTextView = findViewById(R.id.txtReviewAnswer)
         nextReviewButton = findViewById(R.id.btnQuestion)
 
-        loadAndDisplayReviewQuestion()
-
+        loadAndDisplayReviewQuestion() // Load and display the first question
 
         nextReviewButton.setOnClickListener {
-            if (currentReviewIndex < reviewQuestionsArray.size - 1) {
-                currentReviewIndex++
-                loadAndDisplayReviewQuestion()
+            if (currentReviewIndex < reviewQuestionsArray.size - 1) { // Check if there are more questions
+                currentReviewIndex++ // Move to the next question
+                loadAndDisplayReviewQuestion() // Load and display the next question
             } else {
                 nextReviewButton.text = "Back to Score Screen"
-                val intent = Intent(this, ScoreScreen::class.java)
+                val intent = Intent(this, ScoreScreen::class.java) // Move to the Score Screen page
                 startActivity(intent)
-                finish()
+                finish() // Finish the current page
             }
         }
     }
 
     private fun loadAndDisplayReviewQuestion() {
-        if (currentReviewIndex >= 0 && currentReviewIndex < reviewQuestionsArray.size) {
-            val currentQA = reviewQuestionsArray[currentReviewIndex]
-            reviewQuestionTextView.text = currentQA.question
-            reviewAnswerTextView.text = "Answer: ${currentQA.answer}"
+        if (currentReviewIndex >= 0 && currentReviewIndex < reviewQuestionsArray.size) { // Check if the index is valid
+            val currentQA = reviewQuestionsArray[currentReviewIndex] // Get the current question and answer
+            reviewQuestionTextView.text = currentQA.question // Display the question
+            reviewAnswerTextView.text = "Answer: ${currentQA.answer}" // Display the answer
 
-            if (currentReviewIndex < reviewQuestionsArray.size - 1) {
+            if (currentReviewIndex < reviewQuestionsArray.size - 1) { // Check if there are more questions
                 nextReviewButton.text = "Next Question"
             }
         } else {
-            reviewQuestionTextView.text = "No questions to review."
-            reviewAnswerTextView.text = ""
+            reviewQuestionTextView.text = "No questions to review." // Display a message if there are no more questions
+            reviewAnswerTextView.text = "" // Clear the answer text
             nextReviewButton.isEnabled = false // Disable the button
         }
     }

@@ -39,7 +39,7 @@ class Questions : AppCompatActivity() {
         txtAnswerFeedback = findViewById(R.id.txtAnswerFeedback)
 
 
-        displayQuestion()
+        displayQuestion() // Display the first question
 
 
         btnTrue.setOnClickListener {
@@ -59,8 +59,8 @@ class Questions : AppCompatActivity() {
     }
 
     private fun displayQuestion() {
-        if (currentQuestionIndex < questions.size) {
-            val question = questions[currentQuestionIndex]
+        if (currentQuestionIndex < questions.size) { // Check if there are more questions
+            val question = questions[currentQuestionIndex] // Get the current question
             txtQuestion.text = question.text
 
 
@@ -75,7 +75,7 @@ class Questions : AppCompatActivity() {
             btnTrue.visibility = Button.GONE // Hide the "True" button
             btnFalse.visibility = Button.GONE // Hide the "False" button
             btnNext.text = "Score Screen"
-            btnNext.isEnabled = true
+            btnNext.isEnabled = true // Enable the "Next" button
             btnNext.setOnClickListener {
                 val intent = Intent(this, ScoreScreen::class.java)
                 intent.putExtra("final_score", score)
@@ -87,7 +87,7 @@ class Questions : AppCompatActivity() {
 
     private fun checkAnswer(userAnswer: Boolean) {
         val currentQuestion = questions[currentQuestionIndex]
-        if (userAnswer == currentQuestion.answer) {
+        if (userAnswer == currentQuestion.answer) { // Check if the user's answer matches the correct answer
             txtAnswerFeedback.text = "Correct!"
             txtAnswerFeedback.setTextColor(getColor(R.color.black))
             score++ // Increase the score if the answer is correct
@@ -97,14 +97,14 @@ class Questions : AppCompatActivity() {
         }
 
 
-        btnTrue.isEnabled = false
-        btnFalse.isEnabled = false
-        btnNext.isEnabled = true
+        btnTrue.isEnabled = false // Disable the "True" button
+        btnFalse.isEnabled = false // Disable the "False" button
+        btnNext.isEnabled = true // Enable the "Next" button
     }
 
     private fun moveToNextQuestion() {
         currentQuestionIndex++ // Move to the next question
-        displayQuestion()
+        displayQuestion() // Display the next question
     }
 
 
