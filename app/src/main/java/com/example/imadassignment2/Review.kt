@@ -43,10 +43,8 @@ class Review : AppCompatActivity() {
                 currentReviewIndex++ // Move to the next question
                 loadAndDisplayReviewQuestion() // Load and display the next question
             } else {
-                nextReviewButton.text = "Back to Score Screen"
-                val intent = Intent(this, ScoreScreen::class.java) // Move to the Score Screen page
-                startActivity(intent)
-                finish() // Finish the current page
+                nextReviewButton.text = "Exit App"
+                finishAffinity() // Exit the app
             }
         }
     }
