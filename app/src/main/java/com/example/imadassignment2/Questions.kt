@@ -17,7 +17,6 @@ class Questions : AppCompatActivity() {
     private var currentQuestionIndex = 0
     private var score = 0 // Initialize score to 0
 
-
     private val questions = listOf(
         Question("The First All Race Election in South Africa Was In 1994.", true),
         Question("Is The Cradle Of Humankind located in Johannesburg.", true),
@@ -96,7 +95,6 @@ class Questions : AppCompatActivity() {
             txtAnswerFeedback.setTextColor(getColor(R.color.black))
         }
 
-
         btnTrue.isEnabled = false // Disable the "True" button
         btnFalse.isEnabled = false // Disable the "False" button
         btnNext.isEnabled = true // Enable the "Next" button
@@ -106,7 +104,6 @@ class Questions : AppCompatActivity() {
         currentQuestionIndex++ // Move to the next question
         displayQuestion() // Display the next question
     }
-
 
     data class Question(val text: String, val answer: Boolean) // Data class to represent a question with text and answer
 }

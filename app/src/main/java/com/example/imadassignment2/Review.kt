@@ -1,11 +1,10 @@
 package com.example.imadassignment2
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
-import android.content.Intent
-
 
 class Review : AppCompatActivity() {
     private lateinit var reviewQuestionTextView: TextView
@@ -43,8 +42,9 @@ class Review : AppCompatActivity() {
                 currentReviewIndex++ // Move to the next question
                 loadAndDisplayReviewQuestion() // Load and display the next question
             } else {
-                nextReviewButton.text = "Exit App"
-                finishAffinity() // Exit the app
+                nextReviewButton.text = "Score Screen"
+                val intent = Intent(this, ScoreScreen::class.java)
+                startActivity(intent) // Move back to sore screen
             }
         }
     }

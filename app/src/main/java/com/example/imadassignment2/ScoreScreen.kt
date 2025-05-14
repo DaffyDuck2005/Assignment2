@@ -52,11 +52,10 @@ class ScoreScreen : AppCompatActivity() {
             3 -> Response.text = "You did good, but you can do better."
             2 -> Response.text = "You did ok, but need to work on your History knowledge."
             1 -> Response.text = "You need to work on your History knowledge."
-            else -> Response.text = "You need to work on your History knowledge."
+            else -> Response.text = "Keep Studying History."
         }
         //Gemini took my original if statement and changed it to when statement
         //Personal response to the score from the user
-
 
         Exit.setOnClickListener {
             finishAffinity() //Exit the app
