@@ -35,7 +35,7 @@ class MainActivity : AppCompatActivity() {
             currentIndex++ // Move to the next sentence
             if (currentIndex < sentences.size) { // Check if there are more sentences
                 Sentence.text = sentences[currentIndex] // Display the next sentence
-                handler.postDelayed(runnable, 1000)// Delay for 1 second before displaying the next sentence
+                handler.postDelayed(runnable, 8000)// Delay for 8 second before displaying the next sentence
             } else {
                 handler.removeCallbacks(runnable) // Remove the runnable if there are no more sentences
                 Start.isEnabled = true // Enable the "Start" button
@@ -46,7 +46,7 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }
-        handler.postDelayed(runnable, 1000)// Delay for 8 second before starting the loop
+        handler.postDelayed(runnable, 8000)// Delay for 8 second before starting the loop
         Start.isEnabled = false // Disable the "Start" button initially
     }
     override fun onDestroy() {
